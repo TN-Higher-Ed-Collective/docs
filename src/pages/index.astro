@@ -2,58 +2,52 @@
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import Header from '@/components/Header.astro';
 import Footer from '@/components/Footer.astro';
-import InstallCommand from '@/components/InstallCommand.astro';
 import Card from '@/components/Card.astro';
-import { themes } from '@/data/themes';
 
 const baseUrl = import.meta.env.BASE_URL;
 const features = [
   {
-    icon: '<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"/></svg>',
-    title: '8 Terminal Themes',
-    description: 'Nord, Dracula, Catppuccin, Gruvbox, Solarized, Tokyo Night, One Dark — plus a clean default. Each with light and dark variants.'
-  },
-  {
-    icon: '<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg>',
-    title: 'Light & Dark Mode',
-    description: 'Independent dark mode toggle works with every theme. Persists to localStorage with zero flash.'
-  },
-  {
-    icon: '<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>',
-    title: 'Full-Text Search',
-    description: 'Pagefind-powered search with Ctrl+K shortcut. Zero-config — just build and it works.'
-  },
-  {
     icon: '<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>',
-    title: 'MDX Content Collections',
-    description: 'Type-safe frontmatter, automatic slug routing, and sidebar generation from your file structure.'
+    title: 'Share Knowledge',
+    description: 'Access proven solutions and peer expertise from IT professionals across Tennessee. Stop reinventing the wheel.'
+  },
+  {
+    icon: '<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>',
+    title: 'Build Community',
+    description: 'Connect with colleagues at other institutions. Share experiences, learn together, and solve problems collaboratively.'
+  },
+  {
+    icon: '<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>',
+    title: 'Accelerate Innovation',
+    description: 'Leverage collective expertise to adopt new technologies faster and more confidently across your institution.'
+  },
+  {
+    icon: '<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>',
+    title: 'Open Source Scripts',
+    description: 'Browse and contribute PowerShell scripts, network configs, monitoring dashboards, and automation tools.'
   },
 ];
 ---
 
-<BaseLayout title="Home">
+<BaseLayout title="Tennessee Higher Ed Tech Collective">
   <Header />
 
   <!-- Hero -->
-  <section class="py-20 lg:py-32" style="background: linear-gradient(to bottom, color-mix(in srgb, var(--td-accent) 5%, transparent), transparent)">
+  <section class="py-20 lg:py-32" style="background: linear-gradient(to bottom, color-mix(in srgb, var(--td-accent) 8%, transparent), transparent)">
     <div class="container text-center">
       <h1 class="text-4xl lg:text-6xl font-bold mb-6 tracking-tight">
-        Terminal Docs
+        Tennessee Higher Ed<br />Tech Collective
       </h1>
       <p class="text-xl lg:text-2xl text-[var(--td-text-muted)] max-w-3xl mx-auto mb-4">
-        A themeable documentation starter for Astro with terminal color scheme presets.
+        Connecting IT professionals across Tennessee's community colleges and TCATs
       </p>
       <p class="text-lg text-[var(--td-text-muted)] max-w-2xl mx-auto mb-8">
-        <strong>8 built-in themes</strong>, light &amp; dark mode, full-text search, MDX content collections, and a clean responsive layout.
+        Collaborative platform for sharing knowledge, solving problems together, and building community across Tennessee's two-year institutions.
       </p>
 
-      <div class="max-w-xl mx-auto mb-8">
-        <InstallCommand />
-      </div>
-
       <div class="flex flex-wrap justify-center gap-4">
-        <a href={`${baseUrl}docs/getting-started/`} class="btn btn-primary">Get Started</a>
-        <a href={`${baseUrl}docs/customization/`} class="btn btn-secondary">Customize</a>
+        <a href="https://discord.gg/INVITE-CODE" class="btn btn-primary" style="background-color: var(--td-error); border-color: var(--td-error);">Join on Discord</a>
+        <a href="https://github.com/TN-Higher-Ed-Collective" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">View GitHub Repos</a>
       </div>
     </div>
   </section>
@@ -61,6 +55,9 @@ const features = [
   <!-- Features -->
   <section class="py-20">
     <div class="container">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold mb-4">Why Join TN HETC?</h2>
+      </div>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
         {features.map(feature => (
           <div class="text-center">
@@ -73,68 +70,49 @@ const features = [
     </div>
   </section>
 
-  <!-- Theme Preview -->
+  <!-- Quick Links -->
   <section class="py-20" style="background-color: var(--td-bg-alt)">
     <div class="container">
       <div class="text-center mb-12">
-        <h2 class="text-3xl font-bold mb-4">Pick Your Palette</h2>
-        <p class="text-[var(--td-text-muted)] max-w-2xl mx-auto">
-          8 color schemes inspired by popular terminal themes. Switch at any time from the header dropdown — your choice persists across pages.
-        </p>
+        <h2 class="text-3xl font-bold mb-4">Quick Links</h2>
       </div>
-
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto">
-        {themes.map(theme => (
-          <button
-            class="theme-preview-btn card p-4 text-center cursor-pointer"
-            data-theme-id={theme.id}
-          >
-            <div class="flex justify-center gap-1 mb-3">
-              {theme.preview.map(color => (
-                <span class="w-6 h-6 rounded-full border border-[var(--td-border)]" style={`background:${color}`} />
-              ))}
-            </div>
-            <span class="text-sm font-medium">{theme.name}</span>
-          </button>
-        ))}
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
+        <a href={`${baseUrl}docs/get-started/joining/`} class="card text-center p-6 hover:border-[var(--td-accent)] transition-colors">
+          <h3 class="font-semibold mb-2">Get Started</h3>
+          <p class="text-[var(--td-text-muted)] text-sm">New to TN HETC? Learn how to join and start participating.</p>
+        </a>
+        <a href="https://github.com/TN-Higher-Ed-Collective" class="card text-center p-6 hover:border-[var(--td-accent)] transition-colors" target="_blank" rel="noopener noreferrer">
+          <h3 class="font-semibold mb-2">Browse Scripts</h3>
+          <p class="text-[var(--td-text-muted)] text-sm">PowerShell scripts, configs, and automation tools on GitHub.</p>
+        </a>
+        <a href={`${baseUrl}docs/about/charter/`} class="card text-center p-6 hover:border-[var(--td-accent)] transition-colors">
+          <h3 class="font-semibold mb-2">Read the Charter</h3>
+          <p class="text-[var(--td-text-muted)] text-sm">Our mission, vision, and values that guide this community.</p>
+        </a>
+        <a href={`${baseUrl}docs/community/code-of-conduct/`} class="card text-center p-6 hover:border-[var(--td-accent)] transition-colors">
+          <h3 class="font-semibold mb-2">Code of Conduct</h3>
+          <p class="text-[var(--td-text-muted)] text-sm">Community guidelines for respectful collaboration.</p>
+        </a>
       </div>
     </div>
   </section>
 
-  <!-- CTA -->
+  <!-- Community Info -->
   <section class="py-20">
     <div class="container">
       <div class="card max-w-4xl mx-auto text-center p-12">
-        <h2 class="text-2xl font-bold mb-4">Ready to Build?</h2>
+        <h2 class="text-2xl font-bold mb-4">Monthly Meetups</h2>
+        <p class="text-[var(--td-text-muted)] mb-4 max-w-xl mx-auto">
+          First Thursday of each month at 2 PM CT on Discord. Themed discussions, peer sharing, and community building.
+        </p>
         <p class="text-[var(--td-text-muted)] mb-8 max-w-xl mx-auto">
-          Clone the template, pick a theme, and start writing docs. Ship in minutes.
+          TN HETC serves IT professionals across <strong>Tennessee's community colleges and TCATs</strong>.
+          <a href={`${baseUrl}docs/community/member-institutions/`} class="text-[var(--td-accent)] hover:underline">See participating institutions</a>.
         </p>
-        <div class="max-w-xl mx-auto mb-6">
-          <InstallCommand />
-        </div>
-        <p class="text-sm text-[var(--td-text-muted)]">
-          Apache 2.0 licensed. <a href="https://github.com/wyre-technology/astro-terminal-docs" class="text-[var(--td-accent)] hover:underline">View on GitHub</a>.
-        </p>
+        <a href={`${baseUrl}docs/get-started/joining/`} class="btn btn-primary">Join the Community</a>
       </div>
     </div>
   </section>
 
   <Footer />
 </BaseLayout>
-
-<script>
-  // Theme preview buttons on homepage
-  document.querySelectorAll('.theme-preview-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const id = (btn as HTMLElement).dataset.themeId;
-      if (id) {
-        document.documentElement.setAttribute('data-theme', id);
-        localStorage.setItem('td-theme', id);
-        // Update header label if present
-        const label = document.getElementById('theme-label');
-        const name = btn.querySelector('span:last-child')?.textContent;
-        if (label && name) label.textContent = name;
-      }
-    });
-  });
-</script>

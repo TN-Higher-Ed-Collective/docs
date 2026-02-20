@@ -1,0 +1,125 @@
+---
+title: GitHub Organization Guide
+description: How to use and contribute to TN HETC GitHub repositories
+order: 3
+---
+
+# GitHub Organization Guide
+
+Our GitHub organization hosts all shared code, scripts, and technical resources.
+
+## Using Our Repositories
+
+### Browsing Scripts
+
+1. Visit the repository for your technology domain
+2. Browse folders to find relevant scripts
+3. Read the README.md for usage instructions
+4. Check the script header for dependencies and requirements
+
+### Using a Script
+
+**Option 1: Download Individual File**
+1. Click on the script file
+2. Click "Raw" button
+3. Right-click and Save As
+4. Test in non-production environment first!
+
+**Option 2: Clone Entire Repository**
+```bash
+git clone https://github.com/TN-Higher-Ed-Collective/docs.git
+cd docs
+```
+
+**Option 3: Fork Repository**
+1. Click "Fork" button (top right)
+2. Creates a copy in your account
+3. Modify as needed for your environment
+
+## Contributing Your Work
+
+### Standard Contribution (Pull Request)
+
+**Step 1: Fork the Repository**
+```bash
+git clone https://github.com/YOUR-USERNAME/docs.git
+cd docs
+```
+
+**Step 2: Create a Branch**
+```bash
+git checkout -b feature/your-contribution
+```
+
+**Step 3: Add Your Files**
+```bash
+git add your-script.ps1
+git commit -m "Add script for automated user onboarding"
+```
+
+**Step 4: Push and Create Pull Request**
+```bash
+git push origin feature/your-contribution
+```
+
+Then open a pull request on GitHub.
+
+### Contribution Guidelines
+
+All scripts should include:
+
+- Header comment block with description, author, date, prerequisites, and usage examples
+- Parameter documentation
+- Error handling (try/catch blocks)
+- Clear variable names
+- Comments explaining complex logic
+
+**Example PowerShell Header:**
+```powershell
+<#
+.SYNOPSIS
+    Automates AD user provisioning for new students
+.DESCRIPTION
+    Creates user accounts in Active Directory based on CSV import
+.PARAMETER CsvPath
+    Path to CSV file containing student data
+.EXAMPLE
+    .\New-StudentAccounts.ps1 -CsvPath "C:\imports\students.csv"
+.NOTES
+    Author: Your Name, Your Institution
+    Date: Month Year
+    Requires: Active Directory PowerShell module
+#>
+```
+
+## Best Practices
+
+### Before Using Any Script
+
+1. **Read the code** — Understand what it does
+2. **Check prerequisites** — Do you have required modules/permissions?
+3. **Test in non-production** — Always test first!
+4. **Modify for your environment** — Update paths, domain names, etc.
+5. **Keep attribution** — Maintain author credits
+
+### Security Considerations
+
+> **Never run scripts blindly.** Our community is trusted, but always verify code yourself. Use `-WhatIf` parameter when available and test with limited scope first.
+
+## Getting Help with Git/GitHub
+
+- **Never used Git before?** Download [GitHub Desktop](https://desktop.github.com/)
+- **Git Tutorial:** [try.github.io](https://try.github.io/)
+- **Ask in Discord** `#automation` channel
+
+### Common Git Commands
+
+```bash
+git clone https://github.com/TN-Higher-Ed-Collective/repo-name.git
+git status
+git add filename.ps1
+git commit -m "Description of changes"
+git push origin branch-name
+git pull origin main
+git checkout -b new-branch-name
+```

@@ -6,8 +6,8 @@ const currentPath = Astro.url.pathname;
 
 const docs = await getCollection('docs');
 
-// Group docs by their section (first path segment)
-const sections = new Map<string, { label: string; href: string }[]>();
+// Group docs by their top-level section (first path segment)
+const sections = new Map<string, { label: string; href: string; order: number }[]>();
 for (const doc of docs) {
   const parts = doc.id.split('/');
   const section = parts.length > 1 ? parts[0] : 'General';
@@ -17,15 +17,24 @@ for (const doc of docs) {
   sections.get(sectionLabel)!.push({
     label: doc.data.title,
     href: `${baseUrl}docs/${doc.id}/`,
+    order: doc.data.order ?? 99,
   });
 }
 
 // Sort entries within each section by order field
 for (const [, items] of sections) {
-  // Entries are already in collection order
+  items.sort((a, b) => a.order - b.order);
 }
 
-const sidebarItems = Array.from(sections.entries()).map(([label, children]) => ({ label, children }));
+// Define desired section order
+const sectionOrder = ['About', 'Get started', 'Resources', 'Community', 'Events'];
+const sidebarItems = Array.from(sections.entries())
+  .sort(([a], [b]) => {
+    const ai = sectionOrder.indexOf(a);
+    const bi = sectionOrder.indexOf(b);
+    return (ai === -1 ? 999 : ai) - (bi === -1 ? 999 : bi);
+  })
+  .map(([label, children]) => ({ label, children }));
 
 function isActive(href?: string): boolean {
   if (!href) return false;
