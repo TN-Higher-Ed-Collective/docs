@@ -159,12 +159,15 @@ code, pre {
   max-width: none;
 }
 
+.prose { color: var(--td-text); }
+.prose h1, .prose h2, .prose h3, .prose h4 { color: var(--td-text); }
+.prose strong { color: var(--td-text); }
 .prose h1 { font-size: 1.875rem; font-weight: 700; margin-bottom: 1.5rem; margin-top: 2rem; }
 .prose h2 { font-size: 1.5rem; font-weight: 600; margin-bottom: 1rem; margin-top: 2rem; }
 .prose h3 { font-size: 1.25rem; font-weight: 600; margin-bottom: 0.75rem; margin-top: 1.5rem; }
-.prose p { margin-bottom: 1rem; line-height: 1.625; }
+.prose p { margin-bottom: 1rem; line-height: 1.625; color: var(--td-text); }
 .prose ul, .prose ol { margin-bottom: 1rem; padding-left: 1.5rem; }
-.prose li { margin-bottom: 0.5rem; }
+.prose li { margin-bottom: 0.5rem; color: var(--td-text); }
 
 .prose code:not(pre code) {
   background-color: var(--td-border);
@@ -195,6 +198,7 @@ code, pre {
 
 .prose a { color: var(--td-accent); }
 .prose a:hover { text-decoration: underline; }
+.prose hr { border-color: var(--td-border); }
 
 .prose blockquote {
   border-left: 4px solid var(--td-accent);
