@@ -82,7 +82,7 @@
         "id": "2",
         "title": "Initialize Astro with Starlight Theme",
         "description": "Set up the Astro documentation site using astro-terminal-docs theme with Tennessee state branding",
-        "status": "pending",
+        "status": "done",
         "dependencies": [
           "1"
         ],
@@ -139,7 +139,8 @@
         ],
         "complexity": 5,
         "recommendedSubtasks": 4,
-        "expansionPrompt": "Divide into: 1) Initialize Astro project with Starlight template, 2) Configure astro.config.mjs with site metadata and navigation, 3) Implement custom Tennessee state branding CSS and assets (logo/favicon), 4) Set up GitHub Pages deployment config and editLink."
+        "expansionPrompt": "Divide into: 1) Initialize Astro project with Starlight template, 2) Configure astro.config.mjs with site metadata and navigation, 3) Implement custom Tennessee state branding CSS and assets (logo/favicon), 4) Set up GitHub Pages deployment config and editLink.",
+        "updatedAt": "2026-02-20T18:33:01.538Z"
       },
       {
         "id": "3",
@@ -151,7 +152,7 @@
         "dependencies": [
           "2"
         ],
-        "status": "pending",
+        "status": "done",
         "subtasks": [
           {
             "id": 1,
@@ -230,7 +231,8 @@
         ],
         "complexity": 6,
         "recommendedSubtasks": 6,
-        "expansionPrompt": "Split into: 1) Create directory structure (about/get-started/etc.), 2) Configure sidebar navigation in astro.config.mjs, 3) Implement index files and placeholder pages, 4) Add breadcrumb navigation, 5) Configure search functionality, 6) Set up table of contents and mobile navigation."
+        "expansionPrompt": "Split into: 1) Create directory structure (about/get-started/etc.), 2) Configure sidebar navigation in astro.config.mjs, 3) Implement index files and placeholder pages, 4) Add breadcrumb navigation, 5) Configure search functionality, 6) Set up table of contents and mobile navigation.",
+        "updatedAt": "2026-02-20T18:37:43.436Z"
       },
       {
         "id": "4",
@@ -242,7 +244,7 @@
         "dependencies": [
           "3"
         ],
-        "status": "pending",
+        "status": "done",
         "subtasks": [
           {
             "id": 1,
@@ -295,7 +297,8 @@
         ],
         "complexity": 6,
         "recommendedSubtasks": 4,
-        "expansionPrompt": "Break into: 1) Create index.mdx with Starlight splash template, 2) Implement hero section with branding/CTAs, 3) Add value propositions using Card/CardGrid components, 4) Build Quick Links and Recent Activity sections with custom CSS."
+        "expansionPrompt": "Break into: 1) Create index.mdx with Starlight splash template, 2) Implement hero section with branding/CTAs, 3) Add value propositions using Card/CardGrid components, 4) Build Quick Links and Recent Activity sections with custom CSS.",
+        "updatedAt": "2026-02-20T18:37:45.058Z"
       },
       {
         "id": "5",
@@ -307,7 +310,7 @@
         "dependencies": [
           "3"
         ],
-        "status": "pending",
+        "status": "done",
         "subtasks": [
           {
             "id": 1,
@@ -352,7 +355,8 @@
         ],
         "complexity": 3,
         "recommendedSubtasks": 4,
-        "expansionPrompt": "Divide by page: 1) mission-vision.md, 2) core-values.md, 3) charter.md with TOC, 4) governance.md; ensure consistent Markdown formatting and internal linking."
+        "expansionPrompt": "Divide by page: 1) mission-vision.md, 2) core-values.md, 3) charter.md with TOC, 4) governance.md; ensure consistent Markdown formatting and internal linking.",
+        "updatedAt": "2026-02-20T18:37:46.815Z"
       },
       {
         "id": "6",
@@ -364,7 +368,7 @@
         "dependencies": [
           "3"
         ],
-        "status": "pending",
+        "status": "done",
         "subtasks": [
           {
             "id": 1,
@@ -409,7 +413,8 @@
         ],
         "complexity": 4,
         "recommendedSubtasks": 4,
-        "expansionPrompt": "Create one subtask per page: 1) joining.md, 2) discord-guide.md, 3) github-guide.md, 4) contributing.md; include code examples and screenshots."
+        "expansionPrompt": "Create one subtask per page: 1) joining.md, 2) discord-guide.md, 3) github-guide.md, 4) contributing.md; include code examples and screenshots.",
+        "updatedAt": "2026-02-20T18:37:48.719Z"
       },
       {
         "id": "7",
@@ -421,7 +426,7 @@
         "dependencies": [
           "3"
         ],
-        "status": "pending",
+        "status": "done",
         "subtasks": [
           {
             "id": 1,
@@ -456,7 +461,8 @@
         ],
         "complexity": 3,
         "recommendedSubtasks": 3,
-        "expansionPrompt": "One subtask per page: 1) code-of-conduct.md, 2) member-institutions.md, 3) steering-committee.md; focus on comprehensive CoC structure and placeholders."
+        "expansionPrompt": "One subtask per page: 1) code-of-conduct.md, 2) member-institutions.md, 3) steering-committee.md; focus on comprehensive CoC structure and placeholders.",
+        "updatedAt": "2026-02-20T18:37:50.679Z"
       },
       {
         "id": "8",
@@ -468,7 +474,7 @@
         "dependencies": [
           "2"
         ],
-        "status": "pending",
+        "status": "done",
         "subtasks": [
           {
             "id": 1,
@@ -507,7 +513,8 @@
         ],
         "complexity": 7,
         "recommendedSubtasks": 3,
-        "expansionPrompt": "Break into: 1) Create deploy.yml with Node.js/Astro build steps and caching, 2) Configure triggers/permissions/concurrency/error handling, 3) Test automated and manual deployments to GitHub Pages."
+        "expansionPrompt": "Break into: 1) Create deploy.yml with Node.js/Astro build steps and caching, 2) Configure triggers/permissions/concurrency/error handling, 3) Test automated and manual deployments to GitHub Pages.",
+        "updatedAt": "2026-02-20T18:37:52.329Z"
       },
       {
         "id": "9",
@@ -519,7 +526,7 @@
         "dependencies": [
           "3"
         ],
-        "status": "pending",
+        "status": "done",
         "subtasks": [
           {
             "id": 1,
@@ -594,7 +601,8 @@
         ],
         "complexity": 5,
         "recommendedSubtasks": 6,
-        "expansionPrompt": "Split into: 1) resources/index.md overview, 2) scripts.md with repo links, 3-7) One subtask each for best-practices pages (AD/VMware/Networking/Storage/Security) with consistent structure."
+        "expansionPrompt": "Split into: 1) resources/index.md overview, 2) scripts.md with repo links, 3-7) One subtask each for best-practices pages (AD/VMware/Networking/Storage/Security) with consistent structure.",
+        "updatedAt": "2026-02-20T18:37:54.172Z"
       },
       {
         "id": "10",
@@ -611,7 +619,7 @@
           "8",
           "9"
         ],
-        "status": "pending",
+        "status": "in-progress",
         "subtasks": [
           {
             "id": 1,
@@ -712,14 +720,15 @@
         ],
         "complexity": 8,
         "recommendedSubtasks": 7,
-        "expansionPrompt": "Divide into: 1) Final CSS/color scheme/contrast, 2) SEO/meta/ favicon, 3) Code block enhancements (copy/syntax highlighting), 4) Cross-browser testing, 5) Mobile/accessibility audits, 6) Link validation, 7) Content review/launch checklist."
+        "expansionPrompt": "Divide into: 1) Final CSS/color scheme/contrast, 2) SEO/meta/ favicon, 3) Code block enhancements (copy/syntax highlighting), 4) Cross-browser testing, 5) Mobile/accessibility audits, 6) Link validation, 7) Content review/launch checklist.",
+        "updatedAt": "2026-02-20T18:38:00.924Z"
       }
     ],
     "metadata": {
       "version": "1.0.0",
-      "lastModified": "2026-02-20T18:24:11.040Z",
+      "lastModified": "2026-02-20T18:38:00.924Z",
       "taskCount": 10,
-      "completedCount": 1,
+      "completedCount": 9,
       "tags": [
         "master"
       ]
