@@ -1,0 +1,48 @@
+---
+const baseUrl = import.meta.env.BASE_URL;
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="border-t border-[var(--td-border)] mt-auto">
+  <div class="container py-12">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+      <div class="md:col-span-2">
+        <a href={baseUrl} class="flex items-center gap-2 font-semibold text-lg mb-4">
+          <span class="text-[var(--td-accent)] font-bold">TN HETC</span>
+        </a>
+        <p class="text-[var(--td-text-muted)] max-w-md">
+          Connecting IT professionals across Tennessee's community colleges and TCATs through shared technology knowledge and collaborative problem-solving.
+        </p>
+      </div>
+
+      <div>
+        <h3 class="font-semibold mb-4">Quick Links</h3>
+        <ul class="space-y-2 text-[var(--td-text-muted)]">
+          <li><a href={`${baseUrl}docs/get-started/joining/`} class="hover:text-[var(--td-text)]">Join the Community</a></li>
+          <li><a href={`${baseUrl}docs/about/charter/`} class="hover:text-[var(--td-text)]">Charter</a></li>
+          <li><a href={`${baseUrl}docs/community/code-of-conduct/`} class="hover:text-[var(--td-text)]">Code of Conduct</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="font-semibold mb-4">Community</h3>
+        <ul class="space-y-2 text-[var(--td-text-muted)]">
+          <li>
+            <a href="https://github.com/TN-Higher-Ed-Collective" target="_blank" rel="noopener noreferrer" class="hover:text-[var(--td-text)]">
+              GitHub
+            </a>
+          </li>
+          <li>
+            <a href="https://discord.gg/INVITE-CODE" target="_blank" rel="noopener noreferrer" class="hover:text-[var(--td-text)]">
+              Discord
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="border-t border-[var(--td-border)] mt-8 pt-8 text-center text-[var(--td-text-muted)] text-sm">
+      <p>Tennessee Higher Ed Tech Collective &copy; {currentYear} - Licensed under MIT</p>
+    </div>
+  </div>
+</footer>

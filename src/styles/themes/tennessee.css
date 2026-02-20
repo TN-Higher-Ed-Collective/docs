@@ -1,0 +1,32 @@
+/* Tennessee Higher Ed Tech Collective theme */
+:root:not([data-theme]),
+:root[data-theme="tennessee"] {
+  --td-bg: #ffffff;
+  --td-bg-alt: #f0f4ff;
+  --td-bg-code: #0a1628;
+  --td-text: #1a1a1a;
+  --td-text-muted: #4a5568;
+  --td-border: #d0d7e3;
+  --td-accent: #002D65;
+  --td-accent-hover: #001D45;
+  --td-success: #16a34a;
+  --td-warning: #d97706;
+  --td-error: #CC0000;
+  --td-info: #002D65;
+}
+
+:root:not([data-theme]).dark,
+:root[data-theme="tennessee"].dark {
+  --td-bg: #0a1628;
+  --td-bg-alt: #111d33;
+  --td-bg-code: #070f1d;
+  --td-text: #e8ecf4;
+  --td-text-muted: #94a3c0;
+  --td-border: #1e2d4a;
+  --td-accent: #4a8af5;
+  --td-accent-hover: #6da3ff;
+  --td-success: #22c55e;
+  --td-warning: #f59e0b;
+  --td-error: #ff4444;
+  --td-info: #4a8af5;
+}
