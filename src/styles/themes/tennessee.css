@@ -17,16 +17,16 @@
 
 :root:not([data-theme]).dark,
 :root[data-theme="tennessee"].dark {
-  --td-bg: #0a1628;
-  --td-bg-alt: #111d33;
-  --td-bg-code: #070f1d;
-  --td-text: #e8ecf4;
-  --td-text-muted: #94a3c0;
-  --td-border: #1e2d4a;
-  --td-accent: #4a8af5;
-  --td-accent-hover: #6da3ff;
-  --td-success: #22c55e;
+  --td-bg: #0f1729;
+  --td-bg-alt: #162038;
+  --td-bg-code: #0a0f1d;
+  --td-text: #f0f4fc;
+  --td-text-muted: #b0bdd4;
+  --td-border: #2a3a58;
+  --td-accent: #6a9fff;
+  --td-accent-hover: #8db8ff;
+  --td-success: #34d058;
   --td-warning: #f59e0b;
-  --td-error: #ff4444;
-  --td-info: #4a8af5;
+  --td-error: #ff5555;
+  --td-info: #6a9fff;
 }
