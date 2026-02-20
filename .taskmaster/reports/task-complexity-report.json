@@ -1,0 +1,93 @@
+{
+	"meta": {
+		"generatedAt": "2026-02-20T18:20:34.163Z",
+		"tasksAnalyzed": 10,
+		"totalTasks": 10,
+		"analysisCount": 10,
+		"thresholdScore": 5,
+		"projectName": "Task Master",
+		"usedResearch": true
+	},
+	"complexityAnalysis": [
+		{
+			"taskId": 1,
+			"taskTitle": "Set up GitHub Organization and Repository Structure",
+			"complexityScore": 4,
+			"recommendedSubtasks": 5,
+			"expansionPrompt": "Break down into: 1) Create GitHub organization, 2) Set up main 'docs' repository with README/LICENSE/.gitignore/GitHub Pages, 3) Create 7 additional repositories with topics/descriptions, 4) Configure branch protection rules across all repos, 5) Verify organization settings and permissions.",
+			"reasoning": "Straightforward administrative tasks following GitHub best practices like clear naming, topics, READMEs, and branch protection[1][2][7]. Multiple repositories (8 total) increase repetition but no technical challenges; low risk with clear test strategy."
+		},
+		{
+			"taskId": 2,
+			"taskTitle": "Initialize Astro with Starlight Theme",
+			"complexityScore": 5,
+			"recommendedSubtasks": 4,
+			"expansionPrompt": "Divide into: 1) Initialize Astro project with Starlight template, 2) Configure astro.config.mjs with site metadata and navigation, 3) Implement custom Tennessee state branding CSS and assets (logo/favicon), 4) Set up GitHub Pages deployment config and editLink.",
+			"reasoning": "Standard Astro/Starlight setup with custom theming requires Node.js knowledge and CSS customization. Moderate complexity due to branding integration and deployment config; well-documented process with clear testing via dev server."
+		},
+		{
+			"taskId": 3,
+			"taskTitle": "Create Core Site Structure and Navigation",
+			"complexityScore": 6,
+			"recommendedSubtasks": 6,
+			"expansionPrompt": "Split into: 1) Create directory structure (about/get-started/etc.), 2) Configure sidebar navigation in astro.config.mjs, 3) Implement index files and placeholder pages, 4) Add breadcrumb navigation, 5) Configure search functionality, 6) Set up table of contents and mobile navigation.",
+			"reasoning": "Involves Astro/Starlight configuration, multiple components (sidebar, breadcrumbs, TOC, search), and ensuring mobile responsiveness. Higher complexity from interdependent navigation systems and PRD alignment; comprehensive testing needed."
+		},
+		{
+			"taskId": 4,
+			"taskTitle": "Develop Custom Homepage with Hero Section",
+			"complexityScore": 6,
+			"recommendedSubtasks": 4,
+			"expansionPrompt": "Break into: 1) Create index.mdx with Starlight splash template, 2) Implement hero section with branding/CTAs, 3) Add value propositions using Card/CardGrid components, 4) Build Quick Links and Recent Activity sections with custom CSS.",
+			"reasoning": "Requires MDX authoring, Starlight component integration, custom CSS for Tennessee branding, and responsive design. Moderate-high complexity from layout/composition and visual polish; depends on prior navigation structure."
+		},
+		{
+			"taskId": 5,
+			"taskTitle": "Create About Section Pages",
+			"complexityScore": 3,
+			"recommendedSubtasks": 4,
+			"expansionPrompt": "Divide by page: 1) mission-vision.md, 2) core-values.md, 3) charter.md with TOC, 4) governance.md; ensure consistent Markdown formatting and internal linking.",
+			"reasoning": "Primarily content creation with Markdown formatting and basic linking. Low complexity as it follows established structure; mainly writing/editing with light formatting for web readability."
+		},
+		{
+			"taskId": 6,
+			"taskTitle": "Develop Get Started Section",
+			"complexityScore": 4,
+			"recommendedSubtasks": 4,
+			"expansionPrompt": "Create one subtask per page: 1) joining.md, 2) discord-guide.md, 3) github-guide.md, 4) contributing.md; include code examples and screenshots.",
+			"reasoning": "Content-heavy with step-by-step guides, code snippets, and Git/Discord specifics. Low-moderate complexity; requires accuracy for technical instructions but standard documentation patterns."
+		},
+		{
+			"taskId": 7,
+			"taskTitle": "Implement Community Section Pages",
+			"complexityScore": 3,
+			"recommendedSubtasks": 3,
+			"expansionPrompt": "One subtask per page: 1) code-of-conduct.md, 2) member-institutions.md, 3) steering-committee.md; focus on comprehensive CoC structure and placeholders.",
+			"reasoning": "Standard policy/documentation pages using Markdown. Low complexity; mostly writing with clear PRD guidance and professional tone requirements."
+		},
+		{
+			"taskId": 8,
+			"taskTitle": "Set up GitHub Actions Deployment Pipeline",
+			"complexityScore": 7,
+			"recommendedSubtasks": 3,
+			"expansionPrompt": "Break into: 1) Create deploy.yml with Node.js/Astro build steps and caching, 2) Configure triggers/permissions/concurrency/error handling, 3) Test automated and manual deployments to GitHub Pages.",
+			"reasoning": "Involves YAML authoring, GitHub Actions specifics (permissions, concurrency, Pages deployment), and thorough testing. Higher complexity from CI/CD best practices and potential debugging of workflow failures."
+		},
+		{
+			"taskId": 9,
+			"taskTitle": "Create Resources Section Framework",
+			"complexityScore": 5,
+			"recommendedSubtasks": 6,
+			"expansionPrompt": "Split into: 1) resources/index.md overview, 2) scripts.md with repo links, 3-7) One subtask each for best-practices pages (AD/VMware/Networking/Storage/Security) with consistent structure.",
+			"reasoning": "Multiple pages with standardized structure and cross-linking to external repos. Moderate complexity from consistency across 6+ pages and placeholder content for future expansion."
+		},
+		{
+			"taskId": 10,
+			"taskTitle": "Finalize Site Polish and Launch Preparation",
+			"complexityScore": 8,
+			"recommendedSubtasks": 7,
+			"expansionPrompt": "Divide into: 1) Final CSS/color scheme/contrast, 2) SEO/meta/ favicon, 3) Code block enhancements (copy/syntax highlighting), 4) Cross-browser testing, 5) Mobile/accessibility audits, 6) Link validation, 7) Content review/launch checklist.",
+			"reasoning": "Comprehensive polish across styling, testing (a11y, browser, mobile), SEO, and multiple features. High complexity due to dependencies on all prior content tasks, extensive testing, and integration challenges."
+		}
+	]
+}
