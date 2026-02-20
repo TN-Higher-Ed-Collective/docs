@@ -2,14 +2,14 @@
   "master": {
     "tasks": [
       {
-        "id": 1,
+        "id": "1",
         "title": "Set up GitHub Organization and Repository Structure",
         "description": "Create the GitHub organization and initial repository structure for the TN HETC project",
         "details": "Create GitHub organization 'TN-Higher-Ed-Tech-Collective' or 'TN-HETC'. Create main 'docs' repository with proper README, MIT LICENSE, and .gitignore. Set up additional repositories: 'PowerShell-Scripts', 'Active-Directory', 'VMware-Automation', 'Network-Configs', 'Security-Tools', 'Monitoring-Tools', 'Templates-And-Docs'. Configure repository settings for GitHub Pages deployment. Add repository topics and descriptions. Set up branch protection rules for main branch.",
         "testStrategy": "Verify all repositories are created and accessible. Test that GitHub Pages is enabled on docs repository. Confirm branch protection rules are working. Validate that organization settings allow public repositories and proper member permissions.",
         "priority": "high",
         "dependencies": [],
-        "status": "pending",
+        "status": "done",
         "subtasks": [
           {
             "id": 1,
@@ -18,7 +18,8 @@
             "dependencies": [],
             "details": "Use GitHub's organization creation interface, set visibility to public, configure billing if needed, and add initial description about TN Higher Ed Tech Collective project following best practices for organization setup.",
             "status": "pending",
-            "testStrategy": "Verify organization exists, is public, and accessible via GitHub URL with correct name and description."
+            "testStrategy": "Verify organization exists, is public, and accessible via GitHub URL with correct name and description.",
+            "parentId": "undefined"
           },
           {
             "id": 2,
@@ -29,7 +30,8 @@
             ],
             "details": "Initialize repo with standard GitHub templates for README.md, LICENSE (MIT), and .gitignore (Node/Astro suitable); add topics like 'documentation', 'astro', 'github-pages'; set description; enable GitHub Pages from main branch /docs folder.",
             "status": "pending",
-            "testStrategy": "Confirm files present and correct; verify GitHub Pages settings active; test Pages URL loads successfully."
+            "testStrategy": "Confirm files present and correct; verify GitHub Pages settings active; test Pages URL loads successfully.",
+            "parentId": "undefined"
           },
           {
             "id": 3,
@@ -40,7 +42,8 @@
             ],
             "details": "For each repo: use clear descriptive names, add relevant topics (e.g., 'powershell' for PowerShell-Scripts), write short descriptions matching purpose, initialize with basic README explaining content and usage per GitHub best practices.",
             "status": "pending",
-            "testStrategy": "Verify all 7 repos created under organization, check descriptions and topics visible on repo pages."
+            "testStrategy": "Verify all 7 repos created under organization, check descriptions and topics visible on repo pages.",
+            "parentId": "undefined"
           },
           {
             "id": 4,
@@ -52,7 +55,8 @@
             ],
             "details": "Navigate to each repo Settings > Branches > Add rule for 'main': require PR reviews (1-2 approvers), status checks if applicable, restrict pushes, allow admins to bypass; apply consistently following GitHub security best practices.",
             "status": "pending",
-            "testStrategy": "Attempt direct push to main (should fail); create test PR and verify protection prompts review."
+            "testStrategy": "Attempt direct push to main (should fail); create test PR and verify protection prompts review.",
+            "parentId": "undefined"
           },
           {
             "id": 5,
@@ -65,9 +69,14 @@
             ],
             "details": "Check org settings for public repos allowed, member roles/permissions; verify all repos accessible publicly; ensure topics/descriptions/GitHub Pages functional; document any issues and confirm alignment with project needs.",
             "status": "pending",
-            "testStrategy": "Test public access to all repos and Pages site; simulate member access with test account; run checklist for all required elements present and working."
+            "testStrategy": "Test public access to all repos and Pages site; simulate member access with test account; run checklist for all required elements present and working.",
+            "parentId": "undefined"
           }
-        ]
+        ],
+        "complexity": 4,
+        "recommendedSubtasks": 5,
+        "expansionPrompt": "Break down into: 1) Create GitHub organization, 2) Set up main 'docs' repository with README/LICENSE/.gitignore/GitHub Pages, 3) Create 7 additional repositories with topics/descriptions, 4) Configure branch protection rules across all repos, 5) Verify organization settings and permissions.",
+        "updatedAt": "2026-02-20T18:24:11.039Z"
       },
       {
         "id": "2",
@@ -75,7 +84,7 @@
         "description": "Set up the Astro documentation site using astro-terminal-docs theme with Tennessee state branding",
         "status": "pending",
         "dependencies": [
-          1
+          "1"
         ],
         "priority": "high",
         "details": "Install and configure the astro-terminal-docs theme from https://github.com/wyre-technology/astro-terminal-docs. Configure astro.config.mjs with Tennessee state colors (#002D65 blue, #CC0000 red, #FFFFFF white), site metadata, and navigation structure. Create custom CSS file with Tennessee branding. Set up proper site configuration for GitHub Pages deployment with correct base URL. Configure social links for GitHub and Discord (placeholder). Add logo and favicon assets. Set up editLink configuration pointing to GitHub repository.",
@@ -88,7 +97,8 @@
             "dependencies": [],
             "details": "Initialize a new Astro project with 'npm create astro@latest' and select minimal template. Install the astro-terminal-docs theme by following the installation instructions from https://github.com/wyre-technology/astro-terminal-docs. Run 'npm install' and configure the theme in astro.config.mjs. Run 'npm run dev' to confirm basic functionality.",
             "status": "pending",
-            "testStrategy": "Start dev server with 'npm run dev' and verify astro-terminal-docs theme loads correctly with terminal-style UI and theme functionality working properly."
+            "testStrategy": "Start dev server with 'npm run dev' and verify astro-terminal-docs theme loads correctly with terminal-style UI and theme functionality working properly.",
+            "parentId": "undefined"
           },
           {
             "id": 2,
@@ -99,7 +109,8 @@
             ],
             "details": "Edit astro.config.mjs to set site title, description, logo paths, social links for GitHub and Discord (placeholder), navigation items for docs sections, and editLink base to GitHub repository URL. Configure astro-terminal-docs specific options and settings as needed for the theme.",
             "status": "pending",
-            "testStrategy": "Restart dev server and verify site title displays correctly, navigation menu shows configured items, social icons appear in footer, and edit links point to correct GitHub URLs within the terminal theme interface."
+            "testStrategy": "Restart dev server and verify site title displays correctly, navigation menu shows configured items, social icons appear in footer, and edit links point to correct GitHub URLs within the terminal theme interface.",
+            "parentId": "undefined"
           },
           {
             "id": 3,
@@ -110,7 +121,8 @@
             ],
             "details": "Add Tennessee logo and favicon to src/assets/. Create custom CSS file defining CSS custom properties for Tennessee state colors (#002D65 blue primary, #CC0000 red accent, #FFFFFF white) that work with the astro-terminal-docs theme styling. Override theme defaults while maintaining terminal aesthetic. Include light/dark logo variants if needed.",
             "status": "pending",
-            "testStrategy": "Verify Tennessee state colors apply correctly within the terminal theme styling in light/dark modes using dev server. Check logo/favicon display in browser tab and site header. Test responsive branding on mobile viewport sizes with terminal theme layout."
+            "testStrategy": "Verify Tennessee state colors apply correctly within the terminal theme styling in light/dark modes using dev server. Check logo/favicon display in browser tab and site header. Test responsive branding on mobile viewport sizes with terminal theme layout.",
+            "parentId": "undefined"
           },
           {
             "id": 4,
@@ -121,19 +133,23 @@
             ],
             "details": "Set base: '/docs-repo-name/' in astro.config.mjs for GitHub Pages deployment. Configure editLink with correct GitHub repository URL pattern that works with the terminal theme. Update deploy adapter if needed for Pages compatibility with astro-terminal-docs. Test build output location and asset paths.",
             "status": "pending",
-            "testStrategy": "Run 'npm run build' and verify output in dist/ includes correct asset paths with base URL and terminal theme assets. Check that edit buttons on pages link to proper GitHub file edit URLs and display correctly within the terminal theme interface."
+            "testStrategy": "Run 'npm run build' and verify output in dist/ includes correct asset paths with base URL and terminal theme assets. Check that edit buttons on pages link to proper GitHub file edit URLs and display correctly within the terminal theme interface.",
+            "parentId": "undefined"
           }
-        ]
+        ],
+        "complexity": 5,
+        "recommendedSubtasks": 4,
+        "expansionPrompt": "Divide into: 1) Initialize Astro project with Starlight template, 2) Configure astro.config.mjs with site metadata and navigation, 3) Implement custom Tennessee state branding CSS and assets (logo/favicon), 4) Set up GitHub Pages deployment config and editLink."
       },
       {
-        "id": 3,
+        "id": "3",
         "title": "Create Core Site Structure and Navigation",
         "description": "Implement the complete directory structure and navigation system as specified in the PRD",
         "details": "Create directory structure in src/content/docs/ following PRD specifications: about/, get-started/, resources/, community/, events/. Set up sidebar navigation in astro.config.mjs with proper hierarchy and links. Create index files for each major section. Implement breadcrumb navigation and table of contents. Configure search functionality. Set up proper heading hierarchy and internal linking structure. Ensure all navigation items have corresponding placeholder pages.",
         "testStrategy": "Test all navigation links work correctly. Verify sidebar navigation expands and collapses properly. Test search functionality returns relevant results. Confirm breadcrumb navigation shows correct path. Test that table of contents generates automatically and links work. Verify mobile navigation hamburger menu functions properly.",
         "priority": "high",
         "dependencies": [
-          2
+          "2"
         ],
         "status": "pending",
         "subtasks": [
@@ -144,7 +160,8 @@
             "dependencies": [],
             "details": "Create directories: about/, get-started/, resources/, community/, events/ inside src/content/docs/. Ensure structure aligns with Astro/Starlight docs conventions for content collections[1][6].",
             "status": "pending",
-            "testStrategy": "Verify directories exist with correct paths and permissions. Check no files conflict with Astro build process."
+            "testStrategy": "Verify directories exist with correct paths and permissions. Check no files conflict with Astro build process.",
+            "parentId": "undefined"
           },
           {
             "id": 2,
@@ -155,7 +172,8 @@
             ],
             "details": "Update astro.config.mjs to define sidebar items for all sections (about, get-started, etc.) with nested hierarchy. Use Starlight sidebar configuration format.",
             "status": "pending",
-            "testStrategy": "Test sidebar renders correctly, expands/collapses, and all links resolve to correct paths."
+            "testStrategy": "Test sidebar renders correctly, expands/collapses, and all links resolve to correct paths.",
+            "parentId": "undefined"
           },
           {
             "id": 3,
@@ -166,7 +184,8 @@
             ],
             "details": "Add index.md in about/, get-started/, resources/, community/, events/. Create basic placeholder.md pages for all navigation items with frontmatter (title, description).",
             "status": "pending",
-            "testStrategy": "Verify all index pages load without errors. Confirm placeholder pages render with proper headings and no broken links."
+            "testStrategy": "Verify all index pages load without errors. Confirm placeholder pages render with proper headings and no broken links.",
+            "parentId": "undefined"
           },
           {
             "id": 4,
@@ -178,7 +197,8 @@
             ],
             "details": "Create or configure Breadcrumb.astro component in src/components/. Integrate into layout to display hierarchy based on current URL path.",
             "status": "pending",
-            "testStrategy": "Navigate through sections; verify breadcrumbs show correct path and are clickable back to parents."
+            "testStrategy": "Navigate through sections; verify breadcrumbs show correct path and are clickable back to parents.",
+            "parentId": "undefined"
           },
           {
             "id": 5,
@@ -190,7 +210,8 @@
             ],
             "details": "Configure Starlight/Astro search in astro.config.mjs. Ensure search indexes all docs content including placeholders. Test basic search queries.",
             "status": "pending",
-            "testStrategy": "Search for section names and verify relevant results appear. Test no results for invalid queries."
+            "testStrategy": "Search for section names and verify relevant results appear. Test no results for invalid queries.",
+            "parentId": "undefined"
           },
           {
             "id": 6,
@@ -203,19 +224,23 @@
             ],
             "details": "Enable Starlight TOC component with automatic generation from headings. Configure mobile menu toggle, ensure sidebar collapses on mobile and all nav elements responsive.",
             "status": "pending",
-            "testStrategy": "Verify TOC generates/links correctly on pages with headings. Test mobile viewport: menu opens/closes, all links accessible via touch."
+            "testStrategy": "Verify TOC generates/links correctly on pages with headings. Test mobile viewport: menu opens/closes, all links accessible via touch.",
+            "parentId": "undefined"
           }
-        ]
+        ],
+        "complexity": 6,
+        "recommendedSubtasks": 6,
+        "expansionPrompt": "Split into: 1) Create directory structure (about/get-started/etc.), 2) Configure sidebar navigation in astro.config.mjs, 3) Implement index files and placeholder pages, 4) Add breadcrumb navigation, 5) Configure search functionality, 6) Set up table of contents and mobile navigation."
       },
       {
-        "id": 4,
+        "id": "4",
         "title": "Develop Custom Homepage with Hero Section",
         "description": "Create the homepage (index.mdx) with hero section, CTAs, and value propositions using Starlight components",
         "details": "Create src/content/docs/index.mdx using Starlight's splash template. Implement hero section with Tennessee Higher Ed Tech Collective branding, tagline, and primary CTAs (Discord and GitHub links - use placeholders initially). Use Starlight's Card and CardGrid components for value propositions section (Share Knowledge, Build Community, Accelerate Innovation). Add Quick Links section with cards linking to key pages. Create Recent Activity section with community highlights. Style with custom CSS using Tennessee state colors. Ensure mobile responsiveness.",
         "testStrategy": "Verify homepage renders correctly with all sections visible. Test CTA buttons have proper styling and hover effects. Confirm Card components display properly in grid layout. Test responsive design on various screen sizes. Verify all internal links navigate to correct pages. Test that hero section maintains proper contrast and readability.",
         "priority": "high",
         "dependencies": [
-          3
+          "3"
         ],
         "status": "pending",
         "subtasks": [
@@ -226,7 +251,8 @@
             "dependencies": [],
             "details": "Create src/content/docs/index.mdx file with frontmatter setting template: 'splash'. Verify it renders without sidebar using Starlight's built-in splash layout. Add basic title for Tennessee Higher Ed Tech Collective.",
             "status": "pending",
-            "testStrategy": "Confirm page renders with full-width layout, no sidebar visible, and proper Starlight splash template structure."
+            "testStrategy": "Confirm page renders with full-width layout, no sidebar visible, and proper Starlight splash template structure.",
+            "parentId": "undefined"
           },
           {
             "id": 2,
@@ -237,7 +263,8 @@
             ],
             "details": "Within index.mdx, implement hero using custom MDX components or HTML with Tennessee state colors (navy blue, gold). Include organization logo/name, tagline, and CTA buttons linking to Discord/GitHub placeholders (e.g., #discord, #github). Ensure prominent, responsive design.",
             "status": "pending",
-            "testStrategy": "Verify hero displays branding correctly, CTAs are styled with hover effects, and responsive on mobile/desktop. Check placeholder links don't break."
+            "testStrategy": "Verify hero displays branding correctly, CTAs are styled with hover effects, and responsive on mobile/desktop. Check placeholder links don't break.",
+            "parentId": "undefined"
           },
           {
             "id": 3,
@@ -248,7 +275,8 @@
             ],
             "details": "Import and use Starlight's Card and CardGrid components in index.mdx. Create three cards: 'Share Knowledge', 'Build Community', 'Accelerate Innovation' with descriptions, icons if available, and Tennessee color styling. Arrange in responsive grid layout.",
             "status": "pending",
-            "testStrategy": "Confirm CardGrid renders three cards in proper grid layout across screen sizes. Test cards display content correctly with custom CSS styling applied."
+            "testStrategy": "Confirm CardGrid renders three cards in proper grid layout across screen sizes. Test cards display content correctly with custom CSS styling applied.",
+            "parentId": "undefined"
           },
           {
             "id": 4,
@@ -261,19 +289,23 @@
             ],
             "details": "Implement Quick Links section with CardGrid linking to about/, get-started/, resources/ (use paths from Task 3). Add Recent Activity section with placeholder community highlights (e.g., recent events, contributions). Apply custom CSS for Tennessee colors, ensure full mobile responsiveness across all sections.",
             "status": "pending",
-            "testStrategy": "Verify all links navigate correctly to existing pages. Test responsive design on mobile/tablet/desktop. Confirm custom CSS applies Tennessee colors consistently without breaking layout."
+            "testStrategy": "Verify all links navigate correctly to existing pages. Test responsive design on mobile/tablet/desktop. Confirm custom CSS applies Tennessee colors consistently without breaking layout.",
+            "parentId": "undefined"
           }
-        ]
+        ],
+        "complexity": 6,
+        "recommendedSubtasks": 4,
+        "expansionPrompt": "Break into: 1) Create index.mdx with Starlight splash template, 2) Implement hero section with branding/CTAs, 3) Add value propositions using Card/CardGrid components, 4) Build Quick Links and Recent Activity sections with custom CSS."
       },
       {
-        "id": 5,
+        "id": "5",
         "title": "Create About Section Pages",
         "description": "Develop all About section pages including Mission & Vision, Core Values, Charter, and Governance",
         "details": "Create about/mission-vision.md with full mission and vision statements, explanation of TN HETC's purpose and differentiation from official TBR channels. Create about/core-values.md with detailed explanations of all 5 core values and examples. Create about/charter.md with complete charter document formatted for web reading with proper heading hierarchy and table of contents. Create about/governance.md explaining steering committee structure, domain champions role, and decision-making process. Use proper Markdown formatting and internal linking.",
         "testStrategy": "Verify all About pages render correctly with proper formatting. Test internal links between About pages work. Confirm heading hierarchy is logical and generates proper table of contents. Test that charter document is readable and well-structured. Verify all content matches PRD specifications exactly.",
         "priority": "medium",
         "dependencies": [
-          3
+          "3"
         ],
         "status": "pending",
         "subtasks": [
@@ -284,7 +316,8 @@
             "dependencies": [],
             "details": "Write complete content using proper Markdown headings (#, ##), bold key phrases, short paragraphs. Include internal links to core-values.md and governance.md. Ensure consistent formatting matching project style.",
             "status": "pending",
-            "testStrategy": "Verify page renders with correct heading hierarchy. Test internal links navigate properly. Confirm content matches PRD specs for purpose and differentiation."
+            "testStrategy": "Verify page renders with correct heading hierarchy. Test internal links navigate properly. Confirm content matches PRD specs for purpose and differentiation.",
+            "parentId": "undefined"
           },
           {
             "id": 2,
@@ -293,7 +326,8 @@
             "dependencies": [],
             "details": "Structure with H2 headings for each value, bullet lists for examples, bold value names. Add links to mission-vision.md and governance.md. Use consistent Markdown syntax like **bold** for emphasis and short sentences.",
             "status": "pending",
-            "testStrategy": "Check all 5 values have detailed explanations and examples. Test links work. Verify formatting is scannable with proper lists and headings."
+            "testStrategy": "Check all 5 values have detailed explanations and examples. Test links work. Verify formatting is scannable with proper lists and headings.",
+            "parentId": "undefined"
           },
           {
             "id": 3,
@@ -302,7 +336,8 @@
             "dependencies": [],
             "details": "Format charter using H1-H4 headings, tables where needed, lists for sections. Implement Markdown TOC using [TOC] or similar. Link to other About pages. Ensure web-readable structure with short paragraphs.",
             "status": "pending",
-            "testStrategy": "Confirm TOC generates correctly and links to sections. Test heading hierarchy is logical. Verify charter content is fully readable without formatting issues."
+            "testStrategy": "Confirm TOC generates correctly and links to sections. Test heading hierarchy is logical. Verify charter content is fully readable without formatting issues.",
+            "parentId": "undefined"
           },
           {
             "id": 4,
@@ -311,19 +346,23 @@
             "dependencies": [],
             "details": "Use structured Markdown: headings for sections, tables for committee structure, lists for processes. Include cross-links to mission-vision.md, core-values.md, charter.md. Maintain consistent style with project navigation.",
             "status": "pending",
-            "testStrategy": "Verify explanations are clear and complete. Test all internal links function. Confirm structure uses tables/lists appropriately for readability."
+            "testStrategy": "Verify explanations are clear and complete. Test all internal links function. Confirm structure uses tables/lists appropriately for readability.",
+            "parentId": "undefined"
           }
-        ]
+        ],
+        "complexity": 3,
+        "recommendedSubtasks": 4,
+        "expansionPrompt": "Divide by page: 1) mission-vision.md, 2) core-values.md, 3) charter.md with TOC, 4) governance.md; ensure consistent Markdown formatting and internal linking."
       },
       {
-        "id": 6,
+        "id": "6",
         "title": "Develop Get Started Section",
         "description": "Create comprehensive onboarding guides for Discord, GitHub, and community participation",
         "details": "Create get-started/joining.md with step-by-step community joining process, eligibility requirements, and expectations. Create get-started/discord-guide.md with complete Discord server structure, channel descriptions, etiquette guidelines, and usage tips. Create get-started/github-guide.md with repository overview, contribution workflows, Git basics, and security considerations. Create get-started/contributing.md with detailed contribution guidelines, code standards, and recognition system. Include code examples, screenshots placeholders, and troubleshooting sections.",
         "testStrategy": "Test that all step-by-step instructions are clear and actionable. Verify code examples have proper syntax highlighting. Confirm all external links are properly formatted. Test that guides are comprehensive enough for newcomers. Verify contribution workflows are technically accurate and follow GitHub best practices.",
         "priority": "medium",
         "dependencies": [
-          3
+          "3"
         ],
         "status": "pending",
         "subtasks": [
@@ -334,7 +373,8 @@
             "dependencies": [],
             "details": "Include step-by-step joining process, eligibility criteria for Tennessee Higher Ed Tech Collective, behavioral expectations, code examples for any forms/applications, screenshot placeholders for application portals, and troubleshooting common issues.",
             "status": "pending",
-            "testStrategy": "Verify instructions are clear and sequential. Check eligibility details match project specs. Confirm placeholders for screenshots are properly formatted. Test for newcomer comprehensibility."
+            "testStrategy": "Verify instructions are clear and sequential. Check eligibility details match project specs. Confirm placeholders for screenshots are properly formatted. Test for newcomer comprehensibility.",
+            "parentId": "undefined"
           },
           {
             "id": 2,
@@ -343,7 +383,8 @@
             "dependencies": [],
             "details": "Document complete server category/channel structure with descriptions, etiquette guidelines, usage tips, role explanations, code examples for bot commands, screenshot placeholders for server layout, and troubleshooting sections.",
             "status": "pending",
-            "testStrategy": "Validate channel descriptions match actual server. Test etiquette guidelines clarity. Confirm code examples have syntax highlighting. Verify screenshots placeholders render correctly."
+            "testStrategy": "Validate channel descriptions match actual server. Test etiquette guidelines clarity. Confirm code examples have syntax highlighting. Verify screenshots placeholders render correctly.",
+            "parentId": "undefined"
           },
           {
             "id": 3,
@@ -352,7 +393,8 @@
             "dependencies": [],
             "details": "Provide repository structure overview, step-by-step contribution workflows (fork, branch, PR), Git basics tutorial with code examples, security best practices, screenshot placeholders for GitHub UI, and troubleshooting Git issues.",
             "status": "pending",
-            "testStrategy": "Test all Git commands and workflows for accuracy. Verify code examples compile correctly. Confirm security considerations are comprehensive. Check UI screenshot placeholders."
+            "testStrategy": "Test all Git commands and workflows for accuracy. Verify code examples compile correctly. Confirm security considerations are comprehensive. Check UI screenshot placeholders.",
+            "parentId": "undefined"
           },
           {
             "id": 4,
@@ -361,19 +403,23 @@
             "dependencies": [],
             "details": "Outline contribution process, code style standards, review process, recognition system for contributors, include relevant code examples, screenshot placeholders for PR process, and troubleshooting submission issues.",
             "status": "pending",
-            "testStrategy": "Verify guidelines align with project standards. Test code examples for proper formatting. Confirm recognition system details are clear. Ensure all links and placeholders function."
+            "testStrategy": "Verify guidelines align with project standards. Test code examples for proper formatting. Confirm recognition system details are clear. Ensure all links and placeholders function.",
+            "parentId": "undefined"
           }
-        ]
+        ],
+        "complexity": 4,
+        "recommendedSubtasks": 4,
+        "expansionPrompt": "Create one subtask per page: 1) joining.md, 2) discord-guide.md, 3) github-guide.md, 4) contributing.md; include code examples and screenshots."
       },
       {
-        "id": 7,
+        "id": "7",
         "title": "Implement Community Section Pages",
         "description": "Create community governance pages including Code of Conduct and member institutions",
         "details": "Create community/code-of-conduct.md with comprehensive community standards, enforcement guidelines, reporting procedures, and appeals process. Include expected/unacceptable behaviors, scope definition, confidentiality policies, and contact information placeholders. Create community/member-institutions.md with structure for listing participating institutions by type and engagement level. Create community/steering-committee.md with committee structure and member information (initially placeholder). Use proper Markdown formatting with clear sections and actionable information.",
         "testStrategy": "Verify Code of Conduct covers all scenarios mentioned in PRD. Test that reporting procedures are clear and accessible. Confirm member institutions page has proper structure for future updates. Test that all community pages maintain professional tone while being approachable. Verify contact information placeholders are clearly marked.",
         "priority": "medium",
         "dependencies": [
-          3
+          "3"
         ],
         "status": "pending",
         "subtasks": [
@@ -384,7 +430,8 @@
             "dependencies": [],
             "details": "Structure with sections: Pledge, Standards (using Contributor Covenant style[6]), Scope[2], Enforcement Guidelines[6], Reporting Procedures, Appeals Process, Confidentiality Policy. Use professional Markdown with headers, lists, and Tennessee branding tone.",
             "status": "pending",
-            "testStrategy": "Verify all PRD elements covered: behaviors, enforcement, reporting, appeals. Check clarity, accessibility, professional/approachable tone. Validate Markdown renders correctly in Starlight."
+            "testStrategy": "Verify all PRD elements covered: behaviors, enforcement, reporting, appeals. Check clarity, accessibility, professional/approachable tone. Validate Markdown renders correctly in Starlight.",
+            "parentId": "undefined"
           },
           {
             "id": 2,
@@ -393,7 +440,8 @@
             "dependencies": [],
             "details": "Include sections: Introduction, Institution Types (e.g., universities, colleges), Engagement Levels (core, associate, affiliate), Table/Markdown list templates with columns for name, type, level, contact, description. Add update submission guidelines.",
             "status": "pending",
-            "testStrategy": "Confirm table structure is expandable and sortable-friendly. Verify categorization logic clear. Test responsive rendering on mobile. Check professional tone and placeholder usability."
+            "testStrategy": "Confirm table structure is expandable and sortable-friendly. Verify categorization logic clear. Test responsive rendering on mobile. Check professional tone and placeholder usability.",
+            "parentId": "undefined"
           },
           {
             "id": 3,
@@ -402,19 +450,23 @@
             "dependencies": [],
             "details": "Sections: Committee Purpose, Structure/Roles (chair, members, terms), Responsibilities, Current Members (placeholder table: name, institution, role, term, contact), Joining Process. Use clean Markdown tables and consistent formatting.",
             "status": "pending",
-            "testStrategy": "Validate structure supports dynamic updates. Confirm roles clearly defined. Test table rendering and accessibility. Ensure page maintains cohesive professional style with other community pages."
+            "testStrategy": "Validate structure supports dynamic updates. Confirm roles clearly defined. Test table rendering and accessibility. Ensure page maintains cohesive professional style with other community pages.",
+            "parentId": "undefined"
           }
-        ]
+        ],
+        "complexity": 3,
+        "recommendedSubtasks": 3,
+        "expansionPrompt": "One subtask per page: 1) code-of-conduct.md, 2) member-institutions.md, 3) steering-committee.md; focus on comprehensive CoC structure and placeholders."
       },
       {
-        "id": 8,
+        "id": "8",
         "title": "Set up GitHub Actions Deployment Pipeline",
         "description": "Configure automated deployment to GitHub Pages with proper CI/CD workflow",
         "details": "Create .github/workflows/deploy.yml with Node.js 20, npm caching, Astro build process, and GitHub Pages deployment. Configure workflow to trigger on push to main branch and manual dispatch. Set up proper permissions for pages deployment (contents: read, pages: write, id-token: write). Include build artifact upload and deployment steps. Add error handling and build status reporting. Configure concurrency settings to prevent multiple deployments. Test deployment process thoroughly.",
         "testStrategy": "Test deployment workflow by pushing to main branch. Verify site builds successfully and deploys to GitHub Pages. Confirm that build failures are properly reported. Test manual workflow dispatch functionality. Verify that concurrent deployments are handled correctly. Test that site is accessible at GitHub Pages URL after deployment.",
         "priority": "high",
         "dependencies": [
-          2
+          "2"
         ],
         "status": "pending",
         "subtasks": [
@@ -425,7 +477,8 @@
             "dependencies": [],
             "details": "Include 'setup-node@v4' with Node 20, 'actions/cache@v4' for npm dependencies, 'npm ci' install, 'npm run build' for Astro, and 'actions/upload-pages-artifact' for dist directory. Structure as multi-job workflow with build job first.",
             "status": "pending",
-            "testStrategy": "Verify workflow syntax with GitHub Actions linting tools. Check that build job completes successfully on manual dispatch without deployment."
+            "testStrategy": "Verify workflow syntax with GitHub Actions linting tools. Check that build job completes successfully on manual dispatch without deployment.",
+            "parentId": "undefined"
           },
           {
             "id": 2,
@@ -436,7 +489,8 @@
             ],
             "details": "Set 'on: push: branches: [main], workflow_dispatch'. Add permissions: {contents: read, pages: write, id-token: write}. Configure 'concurrency: group: pages, cancel-in-progress: true'. Include 'actions/deploy-pages' job dependent on build artifact. Add status reporting with '::notice::' and error handling with 'if: failure()' steps.",
             "status": "pending",
-            "testStrategy": "Validate permissions don't cause auth failures. Test concurrency by triggering multiple dispatches. Confirm deployment job only runs after successful build."
+            "testStrategy": "Validate permissions don't cause auth failures. Test concurrency by triggering multiple dispatches. Confirm deployment job only runs after successful build.",
+            "parentId": "undefined"
           },
           {
             "id": 3,
@@ -447,19 +501,23 @@
             ],
             "details": "Push commits to main branch to test auto-deploy. Use GitHub UI to test manual workflow_dispatch. Trigger concurrent deployments to verify cancellation. Check GitHub Pages site updates correctly and access via custom domain if configured. Review action logs for errors and status reporting.",
             "status": "pending",
-            "testStrategy": "Verify site deploys successfully to https://<username>.github.io/<repo>/. Confirm build failures are reported clearly. Test that only latest deployment succeeds in concurrent scenarios. Validate Pages settings show 'GitHub Actions' as source."
+            "testStrategy": "Verify site deploys successfully to https://<username>.github.io/<repo>/. Confirm build failures are reported clearly. Test that only latest deployment succeeds in concurrent scenarios. Validate Pages settings show 'GitHub Actions' as source.",
+            "parentId": "undefined"
           }
-        ]
+        ],
+        "complexity": 7,
+        "recommendedSubtasks": 3,
+        "expansionPrompt": "Break into: 1) Create deploy.yml with Node.js/Astro build steps and caching, 2) Configure triggers/permissions/concurrency/error handling, 3) Test automated and manual deployments to GitHub Pages."
       },
       {
-        "id": 9,
+        "id": "9",
         "title": "Create Resources Section Framework",
         "description": "Develop the Resources section with best practices structure and script library integration",
         "details": "Create resources/index.md as overview page explaining available resources. Create resources/best-practices/ directory with initial framework pages for Active Directory, VMware, Networking, Storage, and Security. Each best practices page should have consistent structure: overview, common scenarios, recommended approaches, tools and scripts, troubleshooting, and related resources. Create resources/scripts.md linking to GitHub repositories with proper descriptions. Include placeholder content that can be expanded by domain champions. Use consistent formatting and cross-linking between related resources.",
         "testStrategy": "Verify all resource pages have consistent structure and formatting. Test links to GitHub repositories work correctly. Confirm best practices pages have logical organization and clear sections. Test that resource navigation is intuitive and complete. Verify placeholder content is professional and provides clear guidance for future expansion.",
         "priority": "medium",
         "dependencies": [
-          3
+          "3"
         ],
         "status": "pending",
         "subtasks": [
@@ -470,7 +528,8 @@
             "dependencies": [],
             "details": "Include sections on purpose of Resources, list of best practices categories, link to scripts.md, and call-to-action for domain champions. Use consistent Starlight formatting with headings, links to best-practices subpages, and cross-links.",
             "status": "pending",
-            "testStrategy": "Verify page renders correctly, all internal links work, navigation to best-practices and scripts is intuitive, content is scannable with proper headings."
+            "testStrategy": "Verify page renders correctly, all internal links work, navigation to best-practices and scripts is intuitive, content is scannable with proper headings.",
+            "parentId": "undefined"
           },
           {
             "id": 2,
@@ -481,7 +540,8 @@
             ],
             "details": "Link to repositories from Task 1 (PowerShell-Scripts, Active-Directory, VMware-Automation, etc.). Provide descriptions, example use cases, contribution guidelines. Include cross-links to best-practices pages and placeholder for future scripts.",
             "status": "pending",
-            "testStrategy": "Test all GitHub links are valid and open correctly. Confirm descriptions are clear. Verify cross-links to best-practices pages function. Check responsive formatting."
+            "testStrategy": "Test all GitHub links are valid and open correctly. Confirm descriptions are clear. Verify cross-links to best-practices pages function. Check responsive formatting.",
+            "parentId": "undefined"
           },
           {
             "id": 3,
@@ -492,7 +552,8 @@
             ],
             "details": "Use consistent sections: Overview, Common Scenarios, Recommended Approaches, Tools and Scripts (link to repos), Troubleshooting, Related Resources (cross-link to other pages/scripts). Add professional placeholders for domain champions to expand.",
             "status": "pending",
-            "testStrategy": "Confirm all 6 sections present with proper headings. Test links to scripts.md and other resources. Verify consistent formatting matches style guide. Ensure scannable with short paragraphs."
+            "testStrategy": "Confirm all 6 sections present with proper headings. Test links to scripts.md and other resources. Verify consistent formatting matches style guide. Ensure scannable with short paragraphs.",
+            "parentId": "undefined"
           },
           {
             "id": 4,
@@ -503,7 +564,8 @@
             ],
             "details": "Implement sections: Overview, Common Scenarios, Recommended Approaches, Tools and Scripts (link to VMware-Automation repo), Troubleshooting, Related Resources. Use placeholder content, cross-links to AD/Networking/Security/scripts.md.",
             "status": "pending",
-            "testStrategy": "Validate structure matches Active Directory page exactly. Test all internal/external links. Confirm placeholder content is professional and expansion-ready."
+            "testStrategy": "Validate structure matches Active Directory page exactly. Test all internal/external links. Confirm placeholder content is professional and expansion-ready.",
+            "parentId": "undefined"
           },
           {
             "id": 5,
@@ -514,7 +576,8 @@
             ],
             "details": "Standard sections with domain-specific placeholders. Link to Network-Configs repo in Tools/Scripts section. Cross-link to VMware/Storage/Security pages and scripts.md. Ensure consistent terminology and formatting.",
             "status": "pending",
-            "testStrategy": "Check section consistency across all best-practices pages. Verify GitHub links work. Test navigation flow between related resources."
+            "testStrategy": "Check section consistency across all best-practices pages. Verify GitHub links work. Test navigation flow between related resources.",
+            "parentId": "undefined"
           },
           {
             "id": 6,
@@ -525,24 +588,28 @@
             ],
             "details": "For both pages: implement 6 standard sections with placeholders. Storage links relevant repos; Security links Security-Tools/Monitoring-Tools. Add cross-links to all other best-practices, scripts.md, and index.md. Finalize directory creation.",
             "status": "pending",
-            "testStrategy": "Confirm both pages match structure of previous best-practices pages. Test all cross-links form complete navigation network. Verify entire Resources section renders consistently."
+            "testStrategy": "Confirm both pages match structure of previous best-practices pages. Test all cross-links form complete navigation network. Verify entire Resources section renders consistently.",
+            "parentId": "undefined"
           }
-        ]
+        ],
+        "complexity": 5,
+        "recommendedSubtasks": 6,
+        "expansionPrompt": "Split into: 1) resources/index.md overview, 2) scripts.md with repo links, 3-7) One subtask each for best-practices pages (AD/VMware/Networking/Storage/Security) with consistent structure."
       },
       {
-        "id": 10,
+        "id": "10",
         "title": "Finalize Site Polish and Launch Preparation",
         "description": "Complete final styling, testing, and launch preparation including mobile optimization and accessibility",
         "details": "Apply final Tennessee state color scheme throughout site with proper contrast ratios. Implement custom CSS for hero sections, CTAs, and component styling. Test complete site functionality including search, navigation, mobile responsiveness, and accessibility features. Add proper meta descriptions and SEO optimization. Implement code block copy buttons and syntax highlighting for PowerShell, Python, Bash, JSON, YAML. Add favicon and logo assets. Test all internal and external links. Perform final content review and proofreading. Prepare launch checklist and documentation.",
         "testStrategy": "Perform comprehensive cross-browser testing (Chrome, Firefox, Safari, Edge). Test mobile responsiveness on various device sizes. Run accessibility audit using tools like axe or Lighthouse. Verify all code blocks have proper syntax highlighting and copy functionality. Test search functionality across all content. Confirm all links work correctly and external links open in new tabs. Validate HTML and check for any console errors.",
         "priority": "medium",
         "dependencies": [
-          4,
-          5,
-          6,
-          7,
-          8,
-          9
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9"
         ],
         "status": "pending",
         "subtasks": [
@@ -553,7 +620,8 @@
             "dependencies": [],
             "details": "Update global CSS variables, hero sections, CTAs, and all components. Use tools like WebAIM Contrast Checker or Chrome DevTools to verify ratios. Test with @prefers-contrast media query support[1][2][4].",
             "status": "pending",
-            "testStrategy": "Run contrast checker on all text elements, verify 4.5:1 for normal text and 3:1 for large text (18pt/24px or 14pt bold)[1][2][4]"
+            "testStrategy": "Run contrast checker on all text elements, verify 4.5:1 for normal text and 3:1 for large text (18pt/24px or 14pt bold)[1][2][4]",
+            "parentId": "undefined"
           },
           {
             "id": 2,
@@ -564,7 +632,8 @@
             ],
             "details": "Implement meta tags for each page, optimize title tags and descriptions. Add favicon.ico, apple-touch-icon, and Tennessee-branded logo to astro.config.mjs and public folder.",
             "status": "pending",
-            "testStrategy": "Validate meta tags with Lighthouse SEO audit, test favicon display across browsers, confirm logo renders correctly on all pages"
+            "testStrategy": "Validate meta tags with Lighthouse SEO audit, test favicon display across browsers, confirm logo renders correctly on all pages",
+            "parentId": "undefined"
           },
           {
             "id": 3,
@@ -575,7 +644,8 @@
             ],
             "details": "Integrate Prism.js or Shiki with required languages. Add clipboard copy functionality using navigator.clipboard API with visual feedback.",
             "status": "pending",
-            "testStrategy": "Test syntax highlighting renders correctly for all languages, verify copy button copies exact content and shows success state"
+            "testStrategy": "Test syntax highlighting renders correctly for all languages, verify copy button copies exact content and shows success state",
+            "parentId": "undefined"
           },
           {
             "id": 4,
@@ -588,7 +658,8 @@
             ],
             "details": "Test search functionality, navigation menus, forms, and interactive elements. Verify Tennessee color scheme and custom CSS render consistently.",
             "status": "pending",
-            "testStrategy": "Use BrowserStack or local VMs to test Chrome, Firefox, Safari, Edge latest versions. Document any inconsistencies found[1]"
+            "testStrategy": "Use BrowserStack or local VMs to test Chrome, Firefox, Safari, Edge latest versions. Document any inconsistencies found[1]",
+            "parentId": "undefined"
           },
           {
             "id": 5,
@@ -602,7 +673,8 @@
             ],
             "details": "Test responsive breakpoints on mobile devices/tablets. Run axe DevTools and Lighthouse accessibility audits ensuring WCAG AA compliance.",
             "status": "pending",
-            "testStrategy": "Test iOS Safari, Chrome Android at various screen sizes. Lighthouse score >90 for accessibility. Verify all contrast ratios pass[1][2][4]"
+            "testStrategy": "Test iOS Safari, Chrome Android at various screen sizes. Lighthouse score >90 for accessibility. Verify all contrast ratios pass[1][2][4]",
+            "parentId": "undefined"
           },
           {
             "id": 6,
@@ -617,7 +689,8 @@
             ],
             "details": "Use link checker tools or custom script to validate all href attributes. Fix broken links and 404s. Test Discord/GitHub external links.",
             "status": "pending",
-            "testStrategy": "Run automated link checker, manually test all navigation and footer links, verify external links resolve correctly"
+            "testStrategy": "Run automated link checker, manually test all navigation and footer links, verify external links resolve correctly",
+            "parentId": "undefined"
           },
           {
             "id": 7,
@@ -633,15 +706,23 @@
             ],
             "details": "Review all content for grammar, consistency, Tennessee branding tone. Create launch checklist covering deployment, monitoring, post-launch tasks.",
             "status": "pending",
-            "testStrategy": "Peer review content, validate against PRD requirements, test launch checklist items in staging environment"
+            "testStrategy": "Peer review content, validate against PRD requirements, test launch checklist items in staging environment",
+            "parentId": "undefined"
           }
-        ]
+        ],
+        "complexity": 8,
+        "recommendedSubtasks": 7,
+        "expansionPrompt": "Divide into: 1) Final CSS/color scheme/contrast, 2) SEO/meta/ favicon, 3) Code block enhancements (copy/syntax highlighting), 4) Cross-browser testing, 5) Mobile/accessibility audits, 6) Link validation, 7) Content review/launch checklist."
       }
     ],
     "metadata": {
-      "created": "2026-02-20T18:20:12.313Z",
-      "updated": "2026-02-20T18:20:12.313Z",
-      "description": "Tasks for master context"
+      "version": "1.0.0",
+      "lastModified": "2026-02-20T18:24:11.040Z",
+      "taskCount": 10,
+      "completedCount": 1,
+      "tags": [
+        "master"
+      ]
     }
   }
 }
