@@ -1,0 +1,191 @@
+---
+title: Using LLMs to Generate Scripts
+description: How to prompt AI tools to generate quality scripts that meet TN HETC standards
+order: 9
+---
+
+# Using LLMs to Generate Scripts
+
+Large language models (ChatGPT, Claude, Copilot, Gemini, etc.) can be powerful tools for writing scripts — but the quality of what you get depends entirely on how you ask. This guide helps you write prompts that produce scripts meeting our community's standards so they're ready to share in the [Script Library](https://github.com/TN-Higher-Ed-Collective/script-library).
+
+## The Problem with Default LLM Output
+
+Without specific guidance, LLMs tend to produce scripts that:
+
+- Skip error handling or use bare `try/catch` blocks
+- Use inconsistent naming conventions
+- Lack documentation headers
+- Hardcode values that should be parameters
+- Ignore pipeline support and `-WhatIf` safety
+- Don't follow approved PowerShell verb naming
+
+These scripts work for one-off personal use, but they don't meet the bar for shared community tools.
+
+## Our Script Standards (Quick Reference)
+
+Before prompting an LLM, know what we expect. Every script contributed to TN HETC should include:
+
+| Requirement | What It Means |
+| :--- | :--- |
+| **Comment-based help** | `.SYNOPSIS`, `.DESCRIPTION`, `.PARAMETER`, `.EXAMPLE`, `.NOTES` |
+| **`[CmdletBinding()]`** | Enables `-Verbose`, `-Debug`, and `SupportsShouldProcess` for `-WhatIf`/`-Confirm` |
+| **Parameter validation** | `[ValidateSet()]`, `[ValidateRange()]`, `[ValidateScript()]`, etc. |
+| **Approved verbs** | Use `Get-Verb` to see the list — e.g., `Get-`, `Set-`, `New-`, `Remove-` |
+| **Verb-Noun naming** | `Get-StudentAccount`, not `GetStudentAccount` or `student_account_getter` |
+| **PascalCase** | Function names, parameter names, and variables |
+| **Error handling** | `try/catch` with terminating vs. non-terminating errors handled appropriately |
+| **No hardcoded credentials** | Use `[PSCredential]` parameters or `Get-Credential` |
+| **Pipeline support** | `ValueFromPipeline` / `ValueFromPipelineByPropertyName` where it makes sense |
+| **`Write-Verbose` logging** | For operational detail, not `Write-Host` |
+| **Author attribution** | Your name and institution in the `.NOTES` block |
+
+## Prompt Templates
+
+### Basic Script Prompt
+
+Copy and adapt this when asking an LLM to write a script:
+
+```
+Write a PowerShell advanced function that [DESCRIBE WHAT IT DOES].
+
+Requirements:
+- Use [CmdletBinding(SupportsShouldProcess)] with proper parameter attributes
+- Include complete comment-based help (.SYNOPSIS, .DESCRIPTION, .PARAMETER, .EXAMPLE, .NOTES)
+- Use approved PowerShell verbs and Verb-Noun naming with PascalCase
+- Add parameter validation ([ValidateSet], [ValidateRange], [ValidateNotNullOrEmpty], etc.)
+- Implement try/catch error handling with Write-Error for failures
+- Use Write-Verbose for operational logging (not Write-Host)
+- Support pipeline input where appropriate
+- No hardcoded credentials — use [PSCredential] parameter or Get-Credential
+- Use 4-space indentation with opening braces on the same line
+
+In the .NOTES section, include:
+    Author: [YOUR NAME], [YOUR INSTITUTION]
+    Date: [MONTH YEAR]
+    Requires: [LIST ANY REQUIRED MODULES]
+```
+
+### Example: Active Directory Script
+
+Here's a real-world example of a well-structured prompt:
+
+```
+Write a PowerShell advanced function called Disable-InactiveStudentAccount
+that finds and disables Active Directory student accounts that haven't
+logged in within a specified number of days.
+
+Requirements:
+- Use [CmdletBinding(SupportsShouldProcess)] so it supports -WhatIf and -Confirm
+- Include complete comment-based help with at least two .EXAMPLE blocks
+- Parameters:
+  - InactiveDays (int, default 90, validate range 30-365)
+  - SearchBase (string, the OU to search, mandatory)
+  - Credential (PSCredential, optional)
+- Use parameter validation attributes
+- Implement try/catch with meaningful error messages
+- Use Write-Verbose to log each account being processed
+- Support pipeline output of disabled account objects
+- Do NOT actually disable anything without ShouldProcess confirmation
+- Use 4-space indentation with opening braces on the same line
+
+In the .NOTES section, include:
+    Author: Jane Smith, Chattanooga State
+    Date: February 2026
+    Requires: ActiveDirectory module
+```
+
+### Prompt for Improving an Existing Script
+
+If you already have a working script and want to bring it up to standard:
+
+```
+Refactor this PowerShell script to meet these standards:
+
+1. Convert to an advanced function with [CmdletBinding(SupportsShouldProcess)]
+2. Add complete comment-based help (.SYNOPSIS, .DESCRIPTION, .PARAMETER, .EXAMPLE, .NOTES)
+3. Replace hardcoded values with validated parameters
+4. Add try/catch error handling with Write-Error
+5. Replace any Write-Host calls with Write-Verbose or Write-Output
+6. Use approved PowerShell verbs and PascalCase naming
+7. Add pipeline support where appropriate
+8. Keep the same core logic — don't change what the script does
+
+Here's the script:
+[PASTE YOUR SCRIPT]
+```
+
+## Tips for Better Results
+
+### Be Specific About Your Environment
+
+LLMs don't know your infrastructure. Include relevant context:
+
+```
+Our environment:
+- Windows Server 2022 domain controllers
+- PowerShell 5.1 on endpoints, PowerShell 7 on servers
+- Active Directory with OUs organized by campus (Nashville, Chattanooga, etc.)
+- We use SCCM for software deployment
+```
+
+### Ask for `-WhatIf` Support
+
+This is critical for scripts that modify things. If you forget to ask, you'll get scripts that make changes without a safety net:
+
+```
+This script modifies production data. It MUST support -WhatIf so we
+can do a dry run first. Use ShouldProcess for every destructive action.
+```
+
+### Request Practical Examples
+
+LLMs often write generic examples. Ask for ones that match real higher ed scenarios:
+
+```
+Include .EXAMPLE blocks showing:
+1. A dry run with -WhatIf
+2. Running against a specific campus OU
+3. Piping output to Export-Csv for reporting
+```
+
+### Ask It to Explain the Script
+
+After generating a script, follow up with:
+
+```
+Walk me through this script section by section. Explain what each
+parameter does and why you chose those validation attributes.
+```
+
+This helps you understand what you're contributing and catch mistakes.
+
+## Review Before Submitting
+
+LLM-generated code always needs human review. Before submitting to the Script Library:
+
+1. **Read the entire script** — Understand every line
+2. **Test with `-WhatIf`** — Verify it reports what it would do correctly
+3. **Test in non-production** — Run it against a test environment
+4. **Check for hallucinations** — LLMs sometimes invent cmdlet names or parameters that don't exist
+5. **Verify module requirements** — Make sure listed prerequisites are accurate
+6. **Run PSScriptAnalyzer** — Catches style and quality issues automatically:
+   ```powershell
+   Install-Module PSScriptAnalyzer -Scope CurrentUser
+   Invoke-ScriptAnalyzer -Path .\YourScript.ps1
+   ```
+7. **Remove any AI disclaimers** — Delete boilerplate like "As an AI..." from comments
+
+## What to Avoid
+
+- **Don't submit unreviewed LLM output.** It's a starting point, not a finished product.
+- **Don't use `Write-Host` for output.** Use `Write-Output` for data and `Write-Verbose` for logging.
+- **Don't skip `-WhatIf` on destructive scripts.** If it deletes, disables, or modifies, it needs `ShouldProcess`.
+- **Don't hardcode server names, OUs, or credentials.** Make them parameters.
+- **Don't use aliases in shared scripts.** Write `ForEach-Object`, not `%`. Write `Where-Object`, not `?`.
+
+## Additional Resources
+
+- [Approved PowerShell Verbs](https://learn.microsoft.com/en-us/powershell/scripting/developer/cmdlet/approved-verbs-for-windows-powershell-commands) — Microsoft's official list
+- [PSScriptAnalyzer Rules](https://github.com/PowerShell/PSScriptAnalyzer) — Automated style and quality checking
+- [About Comment-Based Help](https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_comment_based_help) — Microsoft docs on help blocks
+- [PoshCode Style Guide](https://poshcode.gitbook.io/powershell-practice-and-style) — Community style conventions
