@@ -1,6 +1,6 @@
 # Tennessee Higher Ed Tech Collective (TN HETC)
 
-A community documentation site connecting IT professionals across Tennessee's community colleges and TCATs (Tennessee Colleges of Applied Technology).
+A community documentation site connecting IT professionals across Tennessee's colleges and universities.
 
 **Live site:** [tn-higher-ed-collective.github.io](https://tn-higher-ed-collective.github.io/docs/)
 
